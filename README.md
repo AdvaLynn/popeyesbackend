@@ -1,9 +1,49 @@
-# Sanity Clean Content Studio
+# Popeyes Backend Sanity
+This is a simple replication of the https://www.popeyes.com/ backend. Using a sanity schema the menu items, categories, combos, and variants are described.
 
-Congratulations, you have now installed the Sanity Content Studio, an open source real-time content editing environment connected to the Sanity backend.
+## Sanity desk
+https://popeyesbackend.sanity.studio/
 
-Now you can do the following things:
+## Graphql instance
+https://61avj9vo.api.sanity.io/v1/graphql/production/default
 
-- [Read “getting started” in the docs](https://www.sanity.io/docs/introduction/getting-started?utm_source=readme)
-- [Join the community Slack](https://slack.sanity.io/?utm_source=readme)
-- [Extend and build plugins](https://www.sanity.io/docs/content-studio/extending?utm_source=readme)
+### Example Queries:
+
+Query all categories:
+```
+query {
+	allCategory{
+    title
+  }
+}
+```
+
+Query all menu items in category Nuggets:
+```
+query {
+	allCategory(where: {title: {eq: "Nuggets"}}) {
+    menuItems {
+      title
+    }
+  }
+}
+```
+
+## How to deploy to Sanity/Graphql
+1. Clone this repository.
+2. Make changes to the schema
+3. run:
+```
+sanity deploy
+```
+Or if you only need to deploy it to graphql:
+```
+sanity graphql deploy
+```
+
+## Running locally
+```
+yarn install
+yarn start
+Go to http://localhost:3333
+```
