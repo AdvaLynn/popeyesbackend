@@ -1,5 +1,5 @@
 # Popeyes Backend Sanity
-This is a simple replication of the https://www.popeyes.com/ backend. Using a sanity schema the menu items, categories, combos, and variants are described.
+This is a simple replication of the https://www.popeyes.com/ backend. Using a sanity schema to descibe the menu items, categories, combos, and variants.
 
 ## Sanity desk
 https://popeyesbackend.sanity.studio/
@@ -12,7 +12,7 @@ https://61avj9vo.api.sanity.io/v1/graphql/production/default
 Query all categories:
 ```
 query {
-	allCategory{
+    allCategory{
     title
   }
 }
@@ -21,7 +21,7 @@ query {
 Query all menu items in category Nuggets:
 ```
 query {
-	allCategory(where: {title: {eq: "Nuggets"}}) {
+    allCategory(where: {title: {eq: "Nuggets"}}) {
     menuItems {
       title
     }
